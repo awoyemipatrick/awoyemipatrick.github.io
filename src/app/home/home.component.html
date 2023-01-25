@@ -1,0 +1,46 @@
+<!-- 
+  Using two way bindind to pass and recieved data . 
+  note: import FormsModule into app.module.ts file
+-->
+<section class="b-g">
+    <div>
+        <h3 class="home-header" *ngIf="show; else elseBlock">
+            {{ greeting }}
+            <input type="text" placeholder="  Name" class="m-3" [(ngModel)]="name" (keyup.enter)="onKeyUp()"
+                #ctrl="ngModel" required />
+            <button (click)="show = !show" class="m-3 grtn btn btn-primary">
+                Enter
+            </button>
+        </h3>
+
+        <ng-template #elseBlock>
+            <h1 class="home-header">
+                Hello {{ name }}, I'm delighted to have you here.
+            </h1>
+        </ng-template>
+    </div>
+
+    <span>
+        <p class="mt-5" [style.color]="fontColor">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sequi
+            natus,
+            <br />
+            rem reiciendis minus, necessitatibus laboriosam est, earum quasi molestiae
+            <br />
+            placeat repellat qui perspiciatis omnis! Blanditiis ipsa a consequatur
+            amet.
+        </p>
+    </span>
+    <span>
+        <main>
+            <div class="column intro-column-home pb-5">
+                <h3 class="font-2 mb-5">My name is</h3>
+                <h1 class="font-1 mb-5 p-2">Awoyemi Patrick Gbenga</h1>
+                <p>I'm Front-End Engineer</p>
+                <div class="pt-3">
+                    <button type="button" class="btn btn-primary">Connect</button>
+                </div>
+            </div>
+        </main>
+    </span>
+</section>
